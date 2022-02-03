@@ -1,17 +1,28 @@
 package org.academiadecodigo.bootcamp;
 
-public class Genie {
+public abstract class Genie {
 
-    private int nMaxPedidos;
-    public Genie(int nMaxPedidos)
+
+    public Genie()
     {
-        this.nMaxPedidos=nMaxPedidos;
+
     }
-    public int concederPedido()
+    public void concederPedido(String tgenios)
     {
-        System.out.println("O teu desejo foi-te concedido");
-        if(nMaxPedidos>0)
-        return -1;
-        else return 1;
+        switch (tgenios){
+            case "fGeneis":
+                System.out.println("O teu desejo foi-te concedido\n");
+                break;
+            case "gGeneis":
+                System.out.println("O teu desejo foi-te concedido\n");
+                break;
+            case "GDemon":
+                System.out.println("O teu desejo foi-te concedido, mas toma la uma chapada na cara.\n");
+                break;
+        }
     }
+
+    public abstract boolean isStatus();
+
+    public abstract void setStatus(boolean status);
 }

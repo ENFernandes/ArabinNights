@@ -4,18 +4,29 @@ public class FGenie extends Genie{
     private int npedidos;
 
     public FGenie(int npedidos) {
-        super(npedidos);
-        System.out.println("eu sou um FGenie e consedite 3 pedidos");
+        super();
+        System.out.println("Eu sou um FGenie e conscedo-te "+ npedidos +" pedidos");
         this.npedidos = npedidos;
     }
 
 
     @Override
-    public int concederPedido() {
+    public void concederPedido(String tGeneis) {
         int cont=0;
-        if(cont < npedidos)
-        super.concederPedido();
-        cont++;
-        return -1;
+        while (cont < npedidos) {
+            super.concederPedido(tGeneis);
+            cont++;
+        }
     }
+
+    @Override
+    public boolean isStatus() {
+        return false;
+    }
+
+    @Override
+    public void setStatus(boolean status) {
+
+    }
+
 }
